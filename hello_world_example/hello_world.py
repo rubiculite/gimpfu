@@ -45,7 +45,7 @@ register(
     # brief description.
     "Hello world image",
     # detail description
-    "Create an image iwth a user-provided string",
+    "Create an image with a user-provided string",
     # author, copyright, date
     "Bart Simpson", "That Dam Dog Inc.","2050",
     # pulldown menu label
