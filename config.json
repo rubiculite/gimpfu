@@ -1,0 +1,96 @@
+{"path": "/Users/susy/cirada/Visualization/gimpfu/imgs/",
+ "mask": {
+    "horizonal_pixels": 50.0,
+    "vertical_pixels": 50.0,
+    "opacity": 75
+  },
+ "images": [
+    {"file": "ver1-4C48GHz2.22.jpg",
+     "label": "2.22 GHz",
+     "levels": [
+         {"channel": "HISTOGRAM_RED",
+          "low_input": 0,
+          "high_input": 1,
+          "clamp_input": false,
+          "gamma": 1.0,
+          "low_output": 0,
+          "high_output": 0,
+          "clamp_output": false},
+         {"channel": "HISTOGRAM_GREEN",
+          "low_input": 0,
+          "high_input": 1,
+          "clamp_input": false,
+          "gamma": 1.0,
+          "low_output": 0,
+          "high_output": 0,
+          "clamp_output": false}
+     ],
+     "curves": [
+        {"channel": "HISTOGRAM_VALUE",
+         "control_points": [[0,0],[80,15],[94,97],[137,220],[180,255],[222,236],[255,191]]
+        }
+     ]},
+    {"file": "ver1-4C48GHz2.73.jpg",
+     "label": "2.73 GHz",
+     "levels": [
+         {"channel": "HISTOGRAM_RED",
+          "low_input": 0,
+          "high_input": 1,
+          "clamp_input": false,
+          "gamma": 1.0,
+          "low_output": 0,
+          "high_output": 0,
+          "clamp_output": false},
+         {"channel": "HISTOGRAM_BLUE",
+          "low_input": 0,
+          "high_input": 1,
+          "clamp_input": false,
+          "gamma": 1.0,
+          "low_output": 0,
+          "high_output": 0,
+          "clamp_output": false}
+     ],
+     "curves": [
+        {"channel": "HISTOGRAM_VALUE",
+         "control_points": [[0,0],[24,22],[39,48],[94,49],[125,32],[157,77],[198,204],[255,34]]
+        }
+     ]},
+    {"file": "ver1-4C48GHz3.24.jpg",
+     "label": "3.24 GHz",
+     "levels": [
+         {"channel": "HISTOGRAM_GREEN",
+          "low_input": 0,
+          "high_input": 1,
+          "clamp_input": false,
+          "gamma": 1.0,
+          "low_output": 0,
+          "high_output": 0,
+          "clamp_output": false}
+     ],
+     "curves": [
+        {"channel": "HISTOGRAM_VALUE",
+         "control_points": [[0,0],[59,72],[108,255],[162,6],[215,87],[255,61]]
+        }
+     ]},
+    {"file": "ver1-4C48GHz3.76.jpg",
+     "label": "3.76 GHz",
+     "levels": [
+         {"channel": "HISTOGRAM_GREEN",
+          "low_input": 0,
+          "high_input": 1,
+          "clamp_input": false,
+          "gamma": 1.0,
+          "low_output": 0,
+          "high_output": 0,
+          "clamp_output": false},
+         {"channel": "HISTOGRAM_BLUE",
+          "low_input": 0,
+          "high_input": 1,
+          "clamp_input": false,
+          "gamma": 1.0,
+          "low_output": 0,
+          "high_output": 0,
+          "clamp_output": false}
+     ]}
+ ]
+}

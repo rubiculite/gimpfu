@@ -1,0 +1,62 @@
+path: "/Users/susy/cirada/Continuum/sandbox/mboyce/gimpfu/imgs/" 
+images:
+   - file: "ver1-4C48GHz2.22.jpg"
+     label: "2.22 GHz"
+     levels: 
+        - channel: HISTOGRAM_RED
+          low_input: 0
+          high_input: 1
+          clamp_input: False
+          gamma: 1.0
+          low_output: 0
+          high_output: 0
+          clamp_output: False
+        - channel: HISTOGRAM_GREEN
+          low_input: 0
+          high_input: 1
+          clamp_input: False
+          gamma: 1.0
+          low_output: 0
+          high_output: 0
+          clamp_output: False
+   - file: "ver1-4C48GHz2.73.jpg"
+     label: "2.73 GHz"
+     levels: 
+        - channel: HISTOGRAM_RED
+          low_input: 0
+          high_input: 1
+          clamp_input: False
+          gamma: 1.0
+          low_output: 0
+          high_output: 0
+          clamp_output: False
+        - channel: HISTOGRAM_BLUE
+          low_input: 0
+          high_input: 1
+          clamp_input: False
+          gamma: 1.0
+          low_output: 0
+          high_output: 0
+          clamp_output: False
+   - file: "ver1-4C48GHz3.24.jpg"
+     label: "3.24 GHz"
+     levels: 
+        - channel: HISTOGRAM_RED
+          low_input: 0
+          high_input: 1
+          clamp_input: False
+          gamma: 1.0
+          low_output: 0
+          high_output: 0
+          clamp_output: False
+   - file: "ver1-4C48GHz3.76.jpg"
+     label: "3.76 GHz"
+     levels: 
+        - channel: HISTOGRAM_RED
+          low_input: 0
+          high_input: 1
+          clamp_input: False
+          gamma: 1.0
+          low_output: 0
+          high_output: 0
+          clamp_output: False
