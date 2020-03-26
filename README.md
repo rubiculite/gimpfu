@@ -10,7 +10,7 @@ To get started, you'll find a highly annotated hello world example in the `hello
 
 Here, `doit.py` is a script for automatically stitching together radio images (in the `imgs` directory) and colorizing them. This script runs off of a `config.json` file located in the same directory, which contains setings for images paths,
 ```
-{"path": "/Users/susy/cirada/Visualization/gimpfu/imgs/",
+{"path": "/Users/susy/workbench/gimpfu/imgs/",
    ...
 }
 ```
@@ -57,19 +57,19 @@ and masking,
   },
    ...
 ```
-To get started you'll need to change the `path` in `config.json` to point to the `imgs` diretory (*i.e.*, relabel, *`"path": "/Users/susy/cirada/Visualization/gimpfu/imgs/",`* accordingly), and then create a symbolic link in GIMP's plug-ins directory: *e.g.*, on Mac OS X it's,
+To get started you'll need to change the `path` in `config.json` to point to the `imgs` diretory (*i.e.*, relabel, *`"path": "/Users/susy/workbench/gimpfu/imgs/",`* accordingly), and then create a symbolic link in GIMP's plug-ins directory: *e.g.*, on Mac OS X it's,
 ```
 /Users/susy/Library/Application\ Support/GIMP/2.10/plug-ins
 ```
 where `susy` is the username, so ...
 ```
 $ cd /Users/susy/Library/Application\ Support/GIMP/2.10/plug-ins
-$ ln -s /Users/susy/cirada/Visualization/gimpfu/doit.py doit.py
+$ ln -s /Users/susy/workbench/gimpfu/doit.py doit.py
 $ ls -al
 total 0
 drwxr-xr-x   3 susy  staff    96  6 Feb 19:28 .
 drwxr-xr-x  48 susy  staff  1536  6 Feb 19:29 ..
-lrwxr-xr-x   1 susy  staff    58  6 Feb 19:28 doit.py -> /Users/susy/cirada/Visualization/gimpfu/doit.py
+lrwxr-xr-x   1 susy  staff    58  6 Feb 19:28 doit.py -> /Users/susy/workbench/gimpfu/doit.py
 $
 ```
 and you're good to go!
