@@ -19,6 +19,7 @@ from gimpfu import *
 #
 
 
+# maps channel string to channel gimp object
 def map_string_to_channel(channel):
     if channel == "HISTOGRAM_VALUE":
         return HISTOGRAM_VALUE
@@ -30,17 +31,28 @@ def map_string_to_channel(channel):
         return HISTOGRAM_BLUE
     return channel
 
+# finds full directory path to source code
+# NB: this is required, as the script is executed
+#     via symbolic-link, and we need to know where
+#     files are relative to the script. In short,
+#     this allows for proper souce control, without
+#     clogging up the plugin-directroy.
 def get_this_source_file_directory():
     def path(fullpath):
         return re.sub(r"(.*/).*$",r"\1",fullpath)
     return path(os.path.realpath(__file__))
 
-# gimfu invariant load
+# gimfu invariant load -- won't bail
+# NB: 'keys' are mapped to u'keys' as gimp prefers this.
 def json_load():
+    # load config file
     default_config_file = get_this_source_file_directory()+"config.json"
     config = json.load(open(default_config_file,'r'))
+
+    # make sure masking parameters are within acceptable bounds
     if 'mask' in config:
         def normalize(mask):
+             # clip mask if outside [0,500]
             if mask < 0:
                 return 0.0
             if mask > 500:
@@ -50,6 +62,7 @@ def json_load():
         mask[u'horizonal_pixels'] = normalize(mask['horizonal_pixels'])
         mask[u'vertical_pixels'] = normalize(mask['vertical_pixels'])
         if 'opacity' in mask:
+            # clip opacity if outside [0,100]
             opacity = float(mask['opacity'])
             if opacity < 0:
                opacity = 0.0
@@ -58,10 +71,13 @@ def json_load():
         else:
             opacity = 100.0
         mask[u'opacity'] = opacity
+
+    # assemble image paramaters
     for image in config['images']:
         image[u'file'] = config['path'] + image['file']
-        image[u'layer'] = None
+        image[u'layer'] = None # add layer key for loaded images
         if 'curves' in image:
+            # add control points
             for curve in image['curves']:
                 curve[u'control_points'] = [ordinate for cp in curve['control_points'] for ordinate in cp]
                 curve[u'num_points'] = len(curve['control_points'])
@@ -73,7 +89,10 @@ def json_load():
 
 # gimfu parameter dependent load
 def load_config():
+    # pre-filter config file
     config = json_load()
+
+    # load image channel objects
     for image in config['images']:
         if 'levels' in image:
             for level in image['levels']:
@@ -96,10 +115,10 @@ def do_it():
     # load images
     images = config['images']
     for image in images:
-        image['layer']=pdb.gimp_file_load_layer(img,image['file'])
+        image['layer'] = pdb.gimp_file_load_layer(img,image['file'])
 
     # set target img to image size
-    width = images[0]['layer'].width
+    width  = images[0]['layer'].width
     height = images[0]['layer'].height
     img.resize(width,height,0,0)
 
